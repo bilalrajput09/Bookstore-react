@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import BookList from './BookList';
+import InputBooks from './InputBooks';
 
 const DisplayBooks = () => {
-  const books = [
+  const [books, setBooks] = useState([
     {
       item_id: 'item1',
       title: 'The Great Gatsby',
@@ -20,10 +22,26 @@ const DisplayBooks = () => {
       author: 'Richard Dawkins',
       category: 'Nonfiction',
     },
-  ];
+  ]);
+  const deleteBookHandler = (id) => {
+    setBooks([...books.filter((book) => book.item_id !== id)]);
+  };
 
+  const addBook = (name) => {
+    const newBook = {
+      item_id: Math.random(),
+      title: name,
+      author: 'Leo Tolstoy',
+      category: 'Fiction',
+    };
+
+    setBooks([...books, newBook]);
+  };
   return (
-    <BookList books={books} />
+    <>
+      <BookList books={books} deleteBookHandler={deleteBookHandler} />
+      <InputBooks addBook={addBook} />
+    </>
   );
 };
 
