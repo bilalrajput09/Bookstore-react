@@ -1,0 +1,14 @@
+.books_container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.books_container li {
+  display: flex;
+  justify-content: space-between;
+}
