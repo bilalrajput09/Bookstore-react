@@ -1,0 +1,9 @@
+.book_btn_container {
+  display: flex;
+  gap: 10px;
+}
+
+.book_btn_container button {
+  padding: 0.5em 1em;
+  font-weight: 700;
+}

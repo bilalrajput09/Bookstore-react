@@ -1,27 +1,21 @@
 import React from 'react';
 import styles from './BookList.module.css';
+import Book from './Book';
 
 const BookList = (props) => {
   const { books } = props;
   const { deleteBookHandler } = props;
 
   return (
-    <ul className={styles.books_container}>
+    <section className={styles.books_container}>
       {books.map((book) => (
-        <li key={book.item_id}>
-          {book.title}
-          {' '}
-          ,
-          {book.author}
-          {' '}
-          ,
-          {book.category}
-          <button type="button" onClick={() => deleteBookHandler(book.item_id)}>
-            Delete
-          </button>
-        </li>
+        <Book
+          key={book.item_id}
+          book={book}
+          deleteBookHandler={deleteBookHandler}
+        />
       ))}
-    </ul>
+    </section>
   );
 };
 
