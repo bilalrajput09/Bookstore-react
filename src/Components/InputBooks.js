@@ -26,8 +26,8 @@ const InputBooks = () => {
   };
   return (
     <form onSubmit={submitBookHandler} className={styles.input_form}>
-      <input ref={inputAuthor} placeholder="author" required />
       <input ref={inputTitle} placeholder="title" required />
+      <input ref={inputAuthor} placeholder="author" required />
       <select ref={selectRef}>
         <option>Action</option>
         <option>Nonfiction</option>
