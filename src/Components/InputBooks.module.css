@@ -1,6 +1,8 @@
 .input_form {
   width: 60%;
   margin: 0 auto;
+  display: flex;
+  gap: 10px;
 }
 
 .input_form input {
@@ -13,4 +15,8 @@
   width: 20%;
   padding: 0.5em;
   font-size: 1em;
+}
+
+.input_form button:hover {
+  background-color: antiquewhite;
 }
