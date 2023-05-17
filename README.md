@@ -48,7 +48,7 @@ I will need to build a website with two subpages:
 
 However, I will only need to implement the /books page (see the image below). The /categories page will stay empty in this MVP (will develop this page on the future).
 <p align="center">
-  <img src="./public/bookstore.png" alt="books" width="500px" />
+  <img src= "./src/assets/bookstore.png" alt="books" width="500px" />
 </p>
 
 ### Projects list
@@ -82,7 +82,7 @@ This is the first project of the Bookstore application. I will set up the enviro
   6. BookStoreItem: renders the individual bookstore item.
 
 <p align="center">
-  <img src="./public/bookstore_app_components.png" alt="books" width="100%" />
+  <img src="./src/assets/bookstore_app_components.png" alt="books" width="100%" />
 </p>
 
   
@@ -182,12 +182,7 @@ Create components inside of the /components directory:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
-## 🚀 Live Demo <a name=""></a>
 
-<!-- > Add a link to your deployed project. -->
-- Click the following url for [... Live Demo ...](https://bookstore-cms-ruby.vercel.app/)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -302,21 +297,6 @@ First thing first, I would like to say Alhamdulillah, Thanks to my Families, Mic
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FAQ (optional) -->
-
-<!-- ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-<!-- > Add at least 2 questions new developers would ask when they decide to use your project. -->
-
-<!-- - **[Question_1]** -->
-
-  <!-- - [Answer_1] -->
-
-<!-- - **[Question_2]** -->
-
-  <!-- - [Answer_2] -->
-
-<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- LICENSE -->
 ## 📝 License <a name="license"></a>
