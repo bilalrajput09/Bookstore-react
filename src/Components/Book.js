@@ -1,7 +1,13 @@
+import { useDispatch } from 'react-redux';
 import styles from './Book.module.css';
+import { booksActions } from '../redux/books/booksSlice';
 
 const Book = (props) => {
-  const { book, deleteBookHandler } = props;
+  const { book } = props;
+  const dispatch = useDispatch();
+  const deleteBookHandler = (id) => {
+    dispatch(booksActions.removeBook({ item_id: id }));
+  };
   return (
     <article>
       <h2>{book.title}</h2>
