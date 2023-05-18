@@ -17,15 +17,23 @@ const Book = (props) => {
         <h3>{author}</h3>
         <ul className={styles.book_btn_container}>
           <li>
-            <button type="button">Comments</button>
+            <button type="button" className={styles.comments}>
+              Comments
+            </button>
           </li>
           <li>
-            <button type="button" onClick={() => dispatch(deleteBook(id))}>
+            <button
+              type="button"
+              className={styles.remove_btn}
+              onClick={() => dispatch(deleteBook(id))}
+            >
               Remove
             </button>
           </li>
           <li>
-            <button type="button">Edit</button>
+            <button type="button" className={styles.remove_btn}>
+              Edit
+            </button>
           </li>
         </ul>
       </div>

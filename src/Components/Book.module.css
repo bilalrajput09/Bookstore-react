@@ -1,5 +1,4 @@
 .article {
-  display: flex;
   justify-content: space-between;
   background-color: white;
   padding: 2rem;
@@ -7,17 +6,27 @@
 
 .book_btn_container {
   display: flex;
-  gap: 25px;
 }
 
 .book_btn_container button {
-  font-weight: 700;
-  margin-top: 2em;
+  font-weight: 500;
+  margin-top: 1em;
   color: #4386bf;
-  border: none;
   font-family: 'Roboto Slab', serif;
-  font-size: 0.875rem;
+  font-size: 1.3rem;
+  opacity: 0.8;
   background-color: white;
+}
+
+.remove_btn {
+  padding: 0.2em 1em;
+  border: none;
+  border-left: 3px solid rgb(216, 212, 212);
+}
+
+.comments {
+  border: none;
+  padding-right: 1em;
 }
 
 .progress {
@@ -60,19 +69,21 @@
   font-weight: bold;
   color: #121212;
   opacity: 0.5;
+  margin-bottom: 0.4em;
 }
 
 .book_details_main_container span {
   font-weight: 700;
   color: #121212;
-  font-size: 1.375rem;
+  font-size: 1.575rem;
 }
 
 .book_details_main_container h3 {
   color: #4386bf;
   font-family: 'Roboto Slab', serif;
   font-weight: 300;
-  font-size: 0.875rem;
+  font-size: 1rem;
+  margin-top: 0.5em;
 }
 
 .chapter_container {
