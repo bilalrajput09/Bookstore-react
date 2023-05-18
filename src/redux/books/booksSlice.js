@@ -1,40 +1,45 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { deleteBook, fetchBooks, postBook } from './action-thunks';
 
-const booksArray = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+const initalAppState = {
+  books: [],
+  isSuccess: false,
+  isLoading: true,
+  hasError: false,
+  isSubmitting: false,
 };
 
 const booksSlice = createSlice({
   name: 'books',
-  initialState: booksArray,
-  reducers: {
-    addBook(state, action) {
-      state.books.push(action.payload);
+  initialState: initalAppState,
+
+  extraReducers: {
+    [postBook.pending]: (state) => {
+      state.isSubmitting = true;
     },
 
-    removeBook(state, action) {
-      state.books = state.books.filter(
-        (book) => book.item_id !== action.payload.item_id,
-      );
+    [postBook.fulfilled]: (state, { payload }) => {
+      state.isSuccess = true;
+      const { title, author, category } = payload;
+      state.books = {
+        ...state.books,
+        [payload.item_id]: [
+          {
+            title,
+            author,
+            category,
+          },
+        ],
+      };
+    },
+
+    [fetchBooks.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.books = action.payload || [];
+    },
+
+    [deleteBook.fulfilled]: (state, action) => {
+      delete state.books[action.payload];
     },
   },
 });

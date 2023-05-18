@@ -1,24 +1,25 @@
 import { useDispatch } from 'react-redux';
 import styles from './Book.module.css';
-import { booksActions } from '../redux/books/booksSlice';
+
+import { deleteBook } from '../redux/books/action-thunks';
 
 const Book = (props) => {
-  const { book } = props;
+  const {
+    title, author, category, id,
+  } = props;
   const dispatch = useDispatch();
-  const deleteBookHandler = (id) => {
-    dispatch(booksActions.removeBook({ item_id: id }));
-  };
+
   return (
     <article>
-      <h2>{book.title}</h2>
-      <h3>{book.author}</h3>
-      <p>{book.category}</p>
+      <h2>{title}</h2>
+      <h3>{author}</h3>
+      <p>{category}</p>
       <ul className={styles.book_btn_container}>
         <li>
           <button type="button">Comments</button>
         </li>
         <li>
-          <button type="button" onClick={() => deleteBookHandler(book.item_id)}>
+          <button type="button" onClick={() => dispatch(deleteBook(id))}>
             Remove
           </button>
         </li>
