@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { uid } from 'uid';
-import { booksActions } from '../redux/books/booksSlice';
 import styles from './InputBooks.module.css';
+import { postBook } from '../redux/books/action-thunks';
 
 const InputBooks = () => {
   const inputAuthor = useRef();
@@ -11,14 +11,16 @@ const InputBooks = () => {
   const dispatch = useDispatch();
   const submitBookHandler = (e) => {
     e.preventDefault();
+    const ID = uid();
     dispatch(
-      booksActions.addBook({
-        item_id: uid(),
+      postBook({
+        item_id: ID,
         title: inputTitle.current.value,
         author: inputAuthor.current.value,
         category: selectRef.current.value,
       }),
     );
+
     inputAuthor.current.value = '';
     inputTitle.current.value = '';
     inputAuthor.current.blur();
