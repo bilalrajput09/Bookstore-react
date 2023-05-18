@@ -10,23 +10,43 @@ const Book = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <article>
-      <h2>{title}</h2>
-      <h3>{author}</h3>
-      <p>{category}</p>
-      <ul className={styles.book_btn_container}>
-        <li>
-          <button type="button">Comments</button>
-        </li>
-        <li>
-          <button type="button" onClick={() => dispatch(deleteBook(id))}>
-            Remove
-          </button>
-        </li>
-        <li>
-          <button type="button">Edit</button>
-        </li>
-      </ul>
+    <article className={styles.article}>
+      <div className={styles.book_details_main_container}>
+        <p>{category}</p>
+        <span>{title}</span>
+        <h3>{author}</h3>
+        <ul className={styles.book_btn_container}>
+          <li>
+            <button type="button">Comments</button>
+          </li>
+          <li>
+            <button type="button" onClick={() => dispatch(deleteBook(id))}>
+              Remove
+            </button>
+          </li>
+          <li>
+            <button type="button">Edit</button>
+          </li>
+        </ul>
+      </div>
+
+      <div className={styles.details_container}>
+        <div className={styles.complete_details_container}>
+          <div className={styles.progress} />
+          <div className={styles.progress_details}>
+            <h3>64%</h3>
+            <p>Completed</p>
+          </div>
+        </div>
+
+        <div>
+          <div className={styles.chapter_container}>
+            <span>CURRENT CHAPTER</span>
+            <p>Chapter 17</p>
+            <button type="button">UPDATE PROGRESS</button>
+          </div>
+        </div>
+      </div>
     </article>
   );
 };

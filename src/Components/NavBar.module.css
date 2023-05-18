@@ -2,19 +2,53 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: cursive;
 }
 
 .header {
+  width: 100%;
+  border-bottom: 3px solid #e8e8e8;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1em;
+  background-color: white;
+}
+
+.header_container {
   display: flex;
-  background-color: antiquewhite;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 3em;
+}
+
+.logo {
+  color: #0290ff;
+  font-size: 1.875rem;
+  cursor: pointer;
 }
 
 .navLink_container {
   display: flex;
   list-style: none;
-  gap: 10px;
-  font-size: 1.5rem;
+  gap: 40px;
   padding: 0.7em;
-  font-weight: 700;
+  font-size: 0.813rem;
+  font-weight: normal;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #121212;
+}
+
+.signup_container {
+  font-size: 26px;
+  padding: 0.5em;
+}
+
+.signup_container i {
+  cursor: pointer;
+  color: #0290ff;
 }

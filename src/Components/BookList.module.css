@@ -1,11 +1,12 @@
 .books_container {
-  width: 60%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin: 0 auto;
   margin-top: 2em;
   margin-bottom: 2em;
+  padding: 1em;
 }
 
 .books_container li {
