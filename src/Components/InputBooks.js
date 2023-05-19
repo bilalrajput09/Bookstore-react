@@ -27,15 +27,18 @@ const InputBooks = () => {
     inputTitle.current.blur();
   };
   return (
-    <form onSubmit={submitBookHandler} className={styles.input_form}>
-      <input ref={inputTitle} placeholder="title" required />
-      <input ref={inputAuthor} placeholder="author" required />
-      <select ref={selectRef}>
-        <option>Action</option>
-        <option>Nonfiction</option>
-        <option>Fiction</option>
-      </select>
-      <button type="submit">Add</button>
+    <form onSubmit={submitBookHandler} className={styles.form_control}>
+      <p>ADD NEW BOOK</p>
+      <div className={styles.input_form}>
+        <input ref={inputTitle} placeholder="Book title" required />
+        <input ref={inputAuthor} placeholder="Book author" required />
+        <select ref={selectRef} placeholder="category">
+          <option>Action</option>
+          <option>Nonfiction</option>
+          <option>Fiction</option>
+        </select>
+        <button type="submit">ADD BOOK</button>
+      </div>
     </form>
   );
 };

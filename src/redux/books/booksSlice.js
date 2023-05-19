@@ -6,7 +6,6 @@ const initalAppState = {
   isSuccess: false,
   isLoading: true,
   hasError: false,
-  isSubmitting: false,
 };
 
 const booksSlice = createSlice({
@@ -14,10 +13,6 @@ const booksSlice = createSlice({
   initialState: initalAppState,
 
   extraReducers: {
-    [postBook.pending]: (state) => {
-      state.isSubmitting = true;
-    },
-
     [postBook.fulfilled]: (state, { payload }) => {
       state.isSuccess = true;
       const { title, author, category } = payload;
@@ -34,7 +29,6 @@ const booksSlice = createSlice({
     },
 
     [fetchBooks.fulfilled]: (state, action) => {
-      state.isLoading = false;
       state.books = action.payload || [];
     },
 

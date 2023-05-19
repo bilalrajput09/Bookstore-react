@@ -9,7 +9,6 @@ const BookList = () => {
 
   const books = useSelector((state) => state.books.books);
   const booksArrayIDs = Object.keys(books);
-
   useEffect(() => {
     dispatch(fetchBooks());
   }, [dispatch]);
@@ -19,15 +18,13 @@ const BookList = () => {
       {booksArrayIDs.map((id) => {
         const element = books[id][0];
         return (
-          <>
-            <Book
-              key={id}
-              title={element.title}
-              author={element.author}
-              category={element.category}
-              id={id}
-            />
-          </>
+          <Book
+            key={id}
+            title={element.title}
+            author={element.author}
+            category={element.category}
+            id={id}
+          />
         );
       })}
     </section>
