@@ -259,7 +259,7 @@ You can deploy this project using:
 GitHub Pages
 Example:
 ```sh
-git@github.com:fickryiman/bookstore-cms.git
+https://github.com/bilalrajput09/Bookstore-react.git
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
